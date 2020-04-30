@@ -3,11 +3,12 @@ source ~/bin/aws-google-auth-aliases
 #export PATH=$PATH:~/repo/infrastructure/bin
 export PATH=$PATH:~/bin:~/Library/Python/2.7/bin:~/repo/infrastructure/bin
 source jq-shortcuts
-export PYTHONDONTWRITEBYTECODE=True
+export PYTHONDONTWRITEBYTECODE=1
 
-########### PERSONAL SETTINGS ############
-source ~/git-completion.bash
+export PROJECTS='~/repo'
 
+# GIT SETTINGS
+source ~/workspace-settings/git-completion.bash
 
 # [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 # export PATH=~/bin:$PATH
@@ -113,6 +114,38 @@ PS1='$ '
 #################
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
-alias ll='ls -lG'
-alias la='ls -alG'
+alias ll='ls -lGh'
+alias la='ls -alGh'
 alias grep="`which grep` --color=always"
+alias ga='git add'
+alias gs='git status'
+alias gc='git commit'
+alias gd='git diff'
+export PATH="/usr/local/opt/sqlite/bin:$PATH"
+
+[ -s "/Users/andrewparmar/.scm_breeze/scm_breeze.sh" ] && source "/Users/andrewparmar/.scm_breeze/scm_breeze.sh"
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/andrewparmar/Documents/0000_Gatech/CS6476_CV/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/andrewparmar/Documents/0000_Gatech/CS6476_CV/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/andrewparmar/Documents/0000_Gatech/CS6476_CV/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/andrewparmar/Documents/0000_Gatech/CS6476_CV/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+export PYENV_VIRTUALENV_DISABLE_PROMPT=0
+
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
