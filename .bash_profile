@@ -126,21 +126,6 @@ export PATH="/usr/local/opt/sqlite/bin:$PATH"
 [ -s "/Users/andrewparmar/.scm_breeze/scm_breeze.sh" ] && source "/Users/andrewparmar/.scm_breeze/scm_breeze.sh"
 
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/andrewparmar/Documents/0000_Gatech/CS6476_CV/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/andrewparmar/Documents/0000_Gatech/CS6476_CV/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/andrewparmar/Documents/0000_Gatech/CS6476_CV/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/andrewparmar/Documents/0000_Gatech/CS6476_CV/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=0
