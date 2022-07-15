@@ -10,11 +10,12 @@ Plugin 'VundleVim/Vundle.vim'
 
 " plugin on GitHub repo
 Plugin 'itchyny/lightline.vim'
-Plugin 'dracula/vim', { 'name': 'dracula' }
+Plugin 'morhetz/gruvbox'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ekalinin/Dockerfile.vim'
-
+Plugin 'nginx.vim'
+"
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -39,10 +40,11 @@ function! LightlineFilename()
   return expand('%')
 endfunction
 
-let g:dracula_italic=0
-colorscheme dracula
-highlight Normal ctermbg=None
-let g:dracula_colorterm=0
+autocmd vimenter * ++nested colorscheme gruvbox
+"let g:dracula_italic=0
+"colorscheme dracula
+"highlight Normal ctermbg=None
+"let g:dracula_colorterm=0
 
 " MANUAL SETTINGS
 "colorscheme monokai
