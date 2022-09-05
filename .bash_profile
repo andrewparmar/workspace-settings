@@ -7,6 +7,8 @@ export PYTHONDONTWRITEBYTECODE=1
 
 export PROJECTS='~/repo'
 
+export DITTO_APIKEYS_DIR=/Users/andrewparmar/repo/shared_files/api_keys_dir
+
 # GIT SETTINGS
 source ~/workspace-settings/git-completion.bash
 
@@ -109,9 +111,9 @@ PROMPT_COMMAND=print_before_the_prompt
 PS1='$ '
 
 
-#################
+###################################################################################################
 ## ALIASES
-#################
+###################################################################################################
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 alias ll='ls -lGh'
@@ -121,6 +123,7 @@ alias ga='git add'
 alias gs='git status'
 alias gc='git commit'
 alias gd='git diff'
+alias gufp='git add -u && git commit --fixup head && git push origin head'
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
 
 [ -s "/Users/andrewparmar/.scm_breeze/scm_breeze.sh" ] && source "/Users/andrewparmar/.scm_breeze/scm_breeze.sh"
@@ -128,9 +131,19 @@ export PATH="/usr/local/opt/sqlite/bin:$PATH"
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-export PYENV_VIRTUALENV_DISABLE_PROMPT=0
+#export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
+eval "$(pyenv virtualenv-init -)"
+
+pyclean () {
+        find . -type f -name "*.py[co]" -delete
+        find . -type d -name "__pycache__" -delete
+}
+export OP_DEVICE="7ic5trmrh6dxyv7kxjs5ijtmpa"
+
+set -o vi
+export OP_SESSION_dittovto="HbIbWVrqiOkdB_xGzVS9PxRTy8qTS5SzkBa8F-4W3Fg"
