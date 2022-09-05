@@ -17,6 +17,8 @@ Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'nginx.vim'
 Plugin 'davidhalter/jedi-vim'"
 Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'wikitopian/hardmode'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -43,10 +45,6 @@ function! LightlineFilename()
 endfunction
 
 autocmd vimenter * ++nested colorscheme gruvbox
-"let g:dracula_italic=0
-"colorscheme dracula
-"highlight Normal ctermbg=None
-"let g:dracula_colorterm=0
 
 " MANUAL SETTINGS
 "colorscheme monokai
@@ -54,6 +52,7 @@ syntax on
 set mouse=n
 set termguicolors
 set number
+set splitright
 set cursorline
 set incsearch
 set hlsearch
@@ -78,6 +77,7 @@ let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_SR = "\<Esc>]50;CursorShape=2\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
+" clear highlights after search.
 nnoremap <CR> :noh<CR><CR>
 
 set clipboard=unnamed
@@ -91,3 +91,19 @@ noremap XX "+x<CR>
 
 " Remove trailing whitespaces
 :nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
+
+" C++ maps
+map ,l :w<cr>:!clear && g++ %:p && ./a.out<cr>
+map ,m :w<cr>:!clear && gcc -std=c11 %:p && ./a.out<cr>
+
+" JSON formatting (leader-pretty-json)
+" map ,pj :execute '%!python -m json.tool' | w<cr>
+
+:set foldmethod=indent
+" set foldnestmax=2
+
+" toggle between tabs
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
+nnoremap <C-j> :tabprevious<CR>
+nnoremap <C-k> :tabnext<CR>
