@@ -8,6 +8,7 @@ echo "Installing package manager"
 
 # Core
 echo "Installing core programs"
+#brew install vim
 #brew install git
 #brew install pyenv
 #brew install pyenv-virtualenv
@@ -15,6 +16,7 @@ echo "Installing core programs"
 #brew install tree
 #brew install coreutils
 #brew install htop
+#brew install wget
 #brew install --cask iterm2
 #brew install --cask brave-browser
 #brew install --cask macvim
@@ -38,7 +40,12 @@ echo "Installing extra programs"
 #brew install --cask transmission
 #brew install --cask calibre
 #brew install --cask firefox
-brew install --cask drawio
+#brew install --cask drawio
+brew install --cask gimp
+#brew install pure
+#brew install node
+#brea install cmus
+#brew install anaconda
 
 # Luna specific
 echo "Installing Luna specific programs"
