@@ -17,6 +17,7 @@ echo "Installing core programs"
 #brew install coreutils
 #brew install htop
 #brew install wget
+#brew install dos2unix
 #brew install --cask iterm2
 #brew install --cask brave-browser
 #brew install --cask macvim
@@ -32,6 +33,7 @@ echo "Installing extra programs"
 #brew install --cask microsoft-teams
 #brew install --cask zoom
 #brew install --cask pycharm
+#brew install --cask goland 
 #brew install --cask sublime-text
 #brew install --cask docker
 #brew install --cask rescuetime
@@ -54,6 +56,7 @@ echo "Installing Luna specific programs"
 #brew install sdm
 #brew install ansible
 #brew install pre-commit
+#brew install postgresql@13
 
 # Required Libs
 # brew install libjpeg # for Pillow
