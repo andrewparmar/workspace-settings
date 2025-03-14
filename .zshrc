@@ -8,6 +8,8 @@ compinit -C  # Uses a cached version for faster startup
 unsetopt BEEP
 # Make coreutils the default for General Commands
 export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+# Add personal cli tools to PATH
+export PATH="$HOME/bin:$PATH"
 
 #######################################################################################
 # pure - preconfigured ZSH prompt (https://github.com/sindresorhus/pure)
