@@ -8,6 +8,8 @@ compinit -C  # Uses a cached version for faster startup
 unsetopt BEEP
 # Make coreutils the default for General Commands
 export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+# Add volta to path
+export PATH="$HOME/.volta/bin:$PATH"
 # Add personal cli tools to PATH
 export PATH="$HOME/bin:$PATH"
 
@@ -25,6 +27,7 @@ zstyle ':prompt:pure:prompt:*' color cyan
 # turn on git stash status
 zstyle :prompt:pure:git:stash show yes
 prompt pure
+RPROMPT="[%*]"
 
 #######################################################################################
 # history size
@@ -35,7 +38,7 @@ HISTSIZE=1000000
 #######################################################################################
 # aliases
 #######################################################################################
-alias grep="`which grep` --color=always"
+alias grep="/usr/bin/grep --color=always"
 alias gufp="git add -u && git commit --fixup head && git push origin head"
 alias hist="history 1"
 # The commented out are Mac commands replaced by those from coreutils below it.
@@ -47,18 +50,26 @@ alias la='ls -alGh --group-directories-first --color'
 #######################################################################################
 # Environment variables set everywhere
 #######################################################################################
+export ANSIBLE_CONFIG=$HOME/.ansible/ansible.cfg
 export BROWSER="brave"
 export EDITOR="vim"
+export PIP_REQUIRE_VIRTUALENV=true
+export UV_MANAGED_PYTHON=1
 export XDG_CONFIG_HOME="$HOME/.config"
 export VIMINIT='source $HOME/.config/vim/.vimrc'
+export VOLTA_FEATURE_PNPM=1
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
 #######################################################################################
 # scmpuff - lite alternative to scm_breeze (https://github.com/mroth/scmpuff/#README)
 #######################################################################################
-eval "$(scmpuff init -s)"
-# Additional aliases that were in scm_breeze but not available with scmpuff
-alias gco="git checkout"
-alias gcb="git checkout -b"
-alias gc="git commit"
-alias gps="git push origin"
+[ -s "/Users/andrew/.scm_breeze/scm_breeze.sh" ] && source "/Users/andrew/.scm_breeze/scm_breeze.sh"
+#eval "$(scmpuff init -s)"
+## Additional aliases that were in scm_breeze but not available with scmpuff
+#alias gco="git checkout"
+#alias gcb="git checkout -b"
+#alias gc="git commit"
+#alias gps="git push origin"
+#alias gpl="git pull origin"
 
+export HYPERTUNE_TOKEN=$(gcloud secrets versions access latest --secret=HYPERTUNE_TOKEN)

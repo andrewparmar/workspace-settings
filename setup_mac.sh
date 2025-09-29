@@ -1,7 +1,7 @@
 echo "Starting mac setup ..."
 
 # Install homebrew
-echo "Installing package manager"
+#echo "Installing package manager"
 #/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 #echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/andrew/.zprofile
 #eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -24,9 +24,11 @@ echo "Installing core programs"
 #brew install --cask 1password
 #brew install --cask 1password/tap/1password-cli
 #brew install --cask rectangle
+brew install volta
+brew install httpie
 
 # Extras 
-echo "Installing extra programs"
+#echo "Installing extra programs"
 #brew install --cask notion
 #brew install --cask evernote
 #brew install --cask slack
@@ -43,14 +45,14 @@ echo "Installing extra programs"
 #brew install --cask calibre
 #brew install --cask firefox
 #brew install --cask drawio
-brew install --cask gimp
+#brew install --cask gimp
 #brew install pure
 #brew install node
 #brea install cmus
 #brew install anaconda
 
 # Luna specific
-echo "Installing Luna specific programs"
+#echo "Installing Luna specific programs"
 #brew install awscli
 #brew install --cask aws-vault
 #brew install sdm
